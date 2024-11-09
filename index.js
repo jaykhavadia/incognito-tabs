@@ -27,7 +27,7 @@ async function openIncognitoTabs() {
         } else {
           console.log("Play button not found on this page");
         }
-        console.log(`video  ${j + 1} Playing....`);
+        console.log(`video ${i + 1}.${j + 1} Playing....`);
         if (j === 4) {
           const randomTimeout =
             Math.floor(Math.random() * (30000 - 10000 + 1)) + 10000;
@@ -39,12 +39,12 @@ async function openIncognitoTabs() {
           await Promise.all(
             browsers.map(async (browser, index) => {
               await browser.close();
-              console.log(`Browser No.${index + 1} closed`);
+              console.log(`Browser No.${i + 1}.${index + 1} closed`);
             })
           );
         }
       } catch (error) {
-        console.log(`openIncognitoTabs  ${j + 1} ~ error`);
+        console.log(`openIncognitoTabs ${i + 1}.${j + 1} ~ error`);
       }
     }
   }
